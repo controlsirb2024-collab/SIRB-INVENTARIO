@@ -2,37 +2,3 @@
 <html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#123b68"><title>SIRB · Almacén</title><link rel="icon" href="./favicon.svg" type="image/svg+xml">  <script type="module" crossorigin src="/SIRB-INVENTARIO/index-7HA0kIvX.js"></script>
   <link rel="stylesheet" crossorigin href="/SIRB-INVENTARIO/index-CyT2uVSf.css">
 </head><body><div id="root"></div></body></html>
-<!-- Cargar SDK de Firebase -->
-<script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-  import { getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
-
-  // Reemplaza con los datos de tu consola de Firebase
-  const firebaseConfig = {
-    apiKey: "TU_API_KEY",
-    authDomain: "TU_PROJECT_ID.firebaseapp.com",
-    projectId: "TU_PROJECT_ID",
-    appId: "TU_APP_ID"
-  };
-
-  const app = initializeApp(firebaseConfig);
-  const auth = getAuth(app);
-
-  // Verificar si el usuario ha iniciado sesión
-  onAuthStateChanged(auth, (user) => {
-    if (!user) {
-      // Si no ha iniciado sesión, pedir correo y contraseña
-      const email = prompt("Ingresa tu correo:");
-      const password = prompt("Ingresa tu contraseña:");
-
-      signInWithEmailAndPassword(auth, email, password)
-        .then(() => {
-          alert("¡Acceso concedido!");
-        })
-        .catch(() => {
-          alert("Acceso denegado. Datos incorrectos.");
-          window.location.reload(); // Recargar para volver a solicitar
-        });
-    }
-  });
-</script>
