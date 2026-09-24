@@ -1,11 +1,11 @@
 # SIRB · Almacén
 
-Inventario: https://controlsirb2024-collab.github.io/SIRB-INVENTARIO/
+https://controlsirb2024-collab.github.io/SIRB-INVENTARIO/
 
-Interfaz web responsiva de inventario, entradas, salidas e historial. Identidad SIRB: Especialistas en chillers.
+Inventario, entradas, salidas e historial con usuarios y contraseñas propios. La información se guarda en el servidor Sites de SIRB y requiere iniciar sesión; no está almacenada en este repositorio.
 
-Los archivos de esta carpeta son la interfaz compilada. La información se guarda en la base de datos del servidor https://sirb-almacen-inventario.controlsirb2024.chatgpt.site; no se guarda en este repositorio ni únicamente en el navegador. Ambas direcciones consultan los mismos datos. El servidor original debe permanecer disponible.
+El administrador crea cuentas desde **Usuarios**, define su perfil y asigna una contraseña temporal de al menos 12 caracteres. Cada usuario cambia esa contraseña al entrar por primera vez. **Desactivar** bloquea una cuenta; **Restablecer contraseña** revoca sus sesiones y asigna una nueva contraseña temporal. **Mi contraseña** permite cambiar la propia.
 
-Para actualizar: modificar el proyecto fuente SIRB, ejecutar `npm run build:pages` y subir el contenido de `pages-dist`. Los archivos principales del proyecto fuente son `app/page.tsx` (interfaz), `app/globals.css` (estilos), `public/sirb-logo.png` (logo) y `app/api/inventory/route.ts` (servidor). Evitar editar manualmente los archivos compilados index-*.js.
+Operador: gestiona materiales y movimientos. Administrador: además gestiona usuarios. No existe registro público. El primer administrador se crea con un enlace privado de activación entregado al dueño; nunca subir ese enlace aquí.
 
-GitHub Pages publica la rama main y la carpeta raíz. No se necesita App Store.
+Archivos compilados de la interfaz. Para actualizar: modificar el proyecto fuente SIRB y ejecutar `npm run build:pages`; publicar los archivos de `pages-dist`. API y base de datos: https://sirb-almacen-inventario.controlsirb2024.chatgpt.site. El servidor debe permanecer disponible.
